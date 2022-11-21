@@ -19,6 +19,10 @@ namespace exercise_3
         {
             LAST = null;
         }
+        public bool search(int rollNo, ref Node previous, ref Node current)
+        {
+
+        }
     }
     internal class Program
     {
