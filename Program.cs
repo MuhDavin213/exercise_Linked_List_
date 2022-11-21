@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace exercise_3
 {
+    //add node
     class Node
     {
         public int rollNumber;
         public string name;
         public string next;
     }
+    //add class circularlist
     class CircularList
     {
         Node LAST;
@@ -21,7 +23,8 @@ namespace exercise_3
         }
         public bool search(int rollNo, ref Node previous, ref Node current)
         {
-            for (previous = current = LAST.next; current != LAST; previous = current, current = current.next)
+            //add function
+            for (previous = current = LAST; current != LAST; previous = current, current = current)
             {
                 if (rollNo == current.rollNumber)
                     return (true);
@@ -31,6 +34,7 @@ namespace exercise_3
             else
                 return (false);
         }
+        //add bool list empty
         public bool listEmpty()
         {
             if (LAST == null)
@@ -38,33 +42,39 @@ namespace exercise_3
             else
                 return false;
         }
-
+        //add void traverse
         public void traverse()
         {
+            //add function
             if (listEmpty())
                 Console.WriteLine("\nList is empty");
             else
             {
                 Console.WriteLine("\nRecords in the list are: \n");
                 Node currentNode;
-                currentNode = LAST.next;
+                currentNode = LAST;
                 while (currentNode != LAST)
                 {
                     Console.Write(currentNode.rollNumber + "" + currentNode.name + "\n");
-                    currentNode = currentNode.next;
+                    currentNode = currentNode;
                 }
                 Console.Write(LAST.rollNumber + "" + LAST.name + "\n");
             }
         }
+        //add void firstnode
         public void firstNode()
         {
             if (listEmpty())
                 Console.WriteLine("\nlist is empty");
             else
-                Console.WriteLine("\nThe first record in the list is:\n\n" + LAST.next.rollNUmber + "" + LAST.next.name);
+                Console.WriteLine("\nThe first record in the list is:\n\n" + LAST.rollNumber + "" + LAST.name);
         }
+    }
+    internal class Program
+    {
         static void Main(string[] args)
         {
+
             CircularList obj = new CircularList();
             while (true)
             {
@@ -103,22 +113,29 @@ namespace exercise_3
                                     Console.WriteLine("\nRoll number: " + curr.rollNumber);
                                     Console.WriteLine("\nName: " + curr.name);
                                 }
-                                
+
                             }
                             break;
                         case '3':
                             {
                                 obj.firstNode();
                             }
+                            break;
+                        case '4':
+                            return;
+                        default:
+                            {
+                                Console.WriteLine("invalid option");
+                                break;
+                            }
                     }
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
             }
-        }
-    }
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
+
         }
     }
 }
