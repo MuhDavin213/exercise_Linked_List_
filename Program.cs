@@ -70,6 +70,17 @@ namespace exercise_3
             {
                 try
                 {
+                    Console.WriteLine("\nMenu");
+                    Console.WriteLine("\nView all the record in the list");
+                    Console.WriteLine("\nSearch for a record in the list");
+                    Console.WriteLine("\ndisplay the first record in the list");
+                    Console.WriteLine("\nExit");
+                    Console.Write("\nEnter your choice (1-4): ");
+                    char ch = Convert.ToChar(Console.ReadLine());
+                    switch (ch)
+                    {
+
+                    }
                 }
             }
         }
