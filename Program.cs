@@ -38,6 +38,16 @@ namespace exercise_3
             else
                 return false;
         }
+
+        public void traverse()
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList is empty");
+            else
+            {
+                Console.WriteLine("\nRecords in the list are: "\n);
+            }
+        }
     }
     internal class Program
     {
